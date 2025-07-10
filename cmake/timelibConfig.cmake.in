@@ -1,0 +1,10 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+find_dependency(CURL REQUIRED)
+include("${CMAKE_CURRENT_LIST_DIR}/timelibTargets.cmake")
+
+set(TIMELIB_INCLUDE_DIRS "${CMAKE_CURRENT_LIST_DIR}/../../include"
+    CACHE STRING "Include directories for timelib" FORCE)
+set(TIMELIB_LIBRARIES timelib::timelib
+    CACHE STRING "Libraries for timelib" FORCE)
