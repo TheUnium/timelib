@@ -21,6 +21,7 @@ target_include_directories(timelib
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/extern/date/include>
         $<INSTALL_INTERFACE:include>
+        $<INSTALL_INTERFACE:include/date>
 )
 
 find_package(CURL REQUIRED)
@@ -34,7 +35,7 @@ install(TARGETS timelib
 )
 
 install(DIRECTORY include/ DESTINATION include)
-install(DIRECTORY extern/date/include/date DESTINATION include/date)
+install(DIRECTORY extern/date/include/ DESTINATION include)
 install(EXPORT timelibTargets
         FILE timelibTargets.cmake
         NAMESPACE timelib::
